@@ -1,0 +1,32 @@
+services:
+  php:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    restart: unless-stopped
+    stdin_open: true
+    ports:
+      - "8001:8000"
+    volumes:
+      - .:/var/www/html:delegated
+    networks:
+      - project_network
+
+  mariadb:
+    image: mariadb
+    ports:
+      - "3307:3306"
+    restart: unless-stopped
+    environment:
+      MYSQL_USER: root
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - db_mysql:/var/lib/mysql
+    networks:
+      - project_network
+
+volumes:
+  db_mysql:
+
+networks:
+  project_network:
