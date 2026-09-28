@@ -4,10 +4,12 @@ declare(strict_types=1);
 class Formula {
     protected $arrancado;
     protected $velocidad;
+    protected $combustible;
 
-    public function __construct($arrancado, $velocidad){
+    public function __construct($arrancado, $velocidad, $combustible){
         $this->arrancado = $arrancado;
         $this->velocidad = $velocidad;
+        $this->combustible = $combustible;
     }
 
     public function arrancar(){
@@ -22,9 +24,15 @@ class Formula {
         }
     }
 
-    public function acelerar(){
-        $this->velocidad = $this->velocidad + 10;
+    public function gastarCombustible(){
+        $this->combustible = $this->combustible -= 5;
     }
+
+    public function acelerar(){
+        $this->velocidad = $this->velocidad += 10;
+        $this->gastarCombustible();
+    }
+
     public function mostrarEstado(){
         if($this->arrancado === true){
             echo "<br> Tu coche esta arrancado <br>";
@@ -36,7 +44,8 @@ class Formula {
             echo "<br>Enciende el coche.<br>";
         }else{
             echo "<br> Tu velocidad es: " . $this->velocidad . "<br>";
-    }
+        }
+            echo "<br> Te queda: " . $this->combustible . " combustible <br>";
 }
 
     public function __destruct(){
@@ -48,9 +57,9 @@ class Gasolina extends Formula {
     private $drs;
     private $aceleron;
 
-    public function __construct($arrancado, $velocidad, $drs, $aceleron)
+    public function __construct($arrancado, $velocidad, $combustible, $drs, $aceleron)
     {
-        parent::__construct($arrancado, $velocidad);
+        parent::__construct($arrancado, $velocidad, $combustible);
         $this->drs = $drs;
         $this->aceleron = $aceleron;
     }
@@ -60,16 +69,16 @@ class Electrico extends Formula {
     private $bateria;
     private $recarga;
 
-    public function __construct($arrancado, $velocidad, $bateria, $reacarga)
+    public function __construct($arrancado, $velocidad, $combustible, $bateria, $reacarga)
     {
-        parent::__construct($arrancado, $velocidad);
+        parent::__construct($arrancado, $velocidad, $combustible);
         $this->bateria = $bateria;
         $this->recarga = $reacarga;
     }
 }
 
-$coche1 = new Formula(arrancado: false, velocidad: 60);
-$coche2 = new Formula(arrancado: true, velocidad: 60);
+$coche1 = new Formula(arrancado: false, velocidad: 60, combustible: 100);
+$coche2 = new Formula(arrancado: true, velocidad: 60, combustible: 100);
 
 
 
