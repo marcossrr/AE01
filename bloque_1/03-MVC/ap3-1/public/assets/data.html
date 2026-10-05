@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de datos</title>
+</head>
+<body>
+
+<h1>Lista de datos</h1>
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Precio</th>
+        <th>Descripción</th>
+    </tr>
+
+    <?php foreach ($data as $dato) { ?>
+    <tr>
+        <td><?php echo htmlspecialchars((string) $dato['id']); ?></td>
+        <td><?php echo htmlspecialchars($dato['name']); ?></td>
+        <td><?php echo number_format((float) $dato['price'], 2); ?> €</td>
+        <td><?php echo htmlspecialchars($dato['description']); ?></td>
+    </tr>
+    <?php } ?>
+
+</table>
+
+</body>
+</html>
