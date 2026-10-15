@@ -1,0 +1,7 @@
+{
+  "/": "AP33\\Controller\\TaskController@list",
+  "/detalle": "AP33\\Controller\\TaskController@detail",
+  "/addTask": "AP33\\Controller\\TaskController@addTask",
+  "/saveTask": "AP33\\Controller\\TaskController@saveTask",
+  "/deleteTask": "AP33\\Controller\\TaskController@deleteTask"
+}
