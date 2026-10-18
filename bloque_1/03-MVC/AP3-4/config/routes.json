@@ -1,7 +1,22 @@
 {
-  "/": "AP33\\Controller\\TaskController@list",
-  "/detalle": "AP33\\Controller\\TaskController@detail",
-  "/addTask": "AP33\\Controller\\TaskController@addTask",
-  "/saveTask": "AP33\\Controller\\TaskController@saveTask",
-  "/deleteTask": "AP33\\Controller\\TaskController@deleteTask"
+  "/": {
+    "controller": "TaskController",
+    "action": "list"
+  },
+  "/detalle": {
+    "controller": "TaskController",
+    "action": "detail"
+  },
+  "/addTask": {
+    "controller": "TaskController",
+    "action": "new"
+  },
+  "/saveTask": {
+    "controller": "TaskController",
+    "action": "save"
+  },
+  "/deleteTask": {
+    "controller": "TaskController",
+    "action": "delete"
+  }
 }

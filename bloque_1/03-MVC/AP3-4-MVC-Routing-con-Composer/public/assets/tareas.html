@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Listado de tareas</title>
+</head>
+<body>
+<a href="/addTask">Crear nueva tarea</a>
+<table border="1">
+    <tr>
+        <td>Título</td>
+        <td>Fecha de vencimiento</td>
+        <td>Acciones</td>
+    </tr>
+    <?php foreach ($tasks as $row) { ?>
+    <tr>
+        <td><?php echo htmlspecialchars($row["title"]) ?></td>
+        <td><?php echo htmlspecialchars($row["due_date"]) ?></td>
+        <td>
+            <a href="/detalle/<?php echo htmlspecialchars($row['slug']) ?>">Ver detalle</a>
+            <a href="/deleteTask/<?php echo htmlspecialchars($row['id']) ?>">Eliminar</a>
+        </td>
+    </tr>
+    <?php } ?>
+</table>
+</body>
+</html>

@@ -1,8 +1,10 @@
 <?php
 
-namespace AP33\Core;
+namespace AP35\Core\Interfaces;
 
-interface RequestInterface {
+interface RequestInterface
+{
     public function getRoute();
+
     public function getParams();
 }

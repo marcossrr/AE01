@@ -1,9 +1,9 @@
 <?php
 
-namespace AP33\Core;
+namespace AP34\Core;
 
-use AP33\Core\Request;
-use AP33\Core\RouteCollection;
+use AP34\Core\Request;
+use AP34\Core\RouteCollection;
 
 class Dispatcher
 {
@@ -31,7 +31,7 @@ class Dispatcher
         //Verificamos que la ruta que hemos recibido está dentro de las rutás de la aplicación
         if (isset($this->routeList[$this->currentRequest->getRoute()])) {
             //Aqui dentro tenetemos un texto del tipo AP2\Controller\DetalleController
-            $controllerClass = "AP33\Controller\\" . $this->routeList[$this->currentRequest->getRoute()]["controller"];
+            $controllerClass = "AP34\Controller\\" . $this->routeList[$this->currentRequest->getRoute()]["controller"];
             //Es equivalente a $controller = new AP2\Controller\MainController o DetalleController;
             $controller = new $controllerClass;
             //Es equivalente al texto main o detail

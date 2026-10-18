@@ -1,41 +1,38 @@
 <?php
 
-namespace AP33\Models;
+namespace AP34\Model;
 
-use AP33\Core\Database;
+use AP34\Core\Database;
 
-class TaskRepository {
-
-    public static function getAll() {
+class TaskRepository
+{
+    public function findAll()
+    {
         $db = Database::getInstance();
-        $query = "SELECT id, title, due_date, slug FROM task";
-        return $db->executeSQL($query);
+        return $db->executeSQL("SELECT * FROM task");
     }
 
-    public static function getBySlug($slug) {
+    public function findBySlug($slug)
+    {
         $db = Database::getInstance();
-        $slug = addslashes($slug);
-        $query = "SELECT * FROM task WHERE slug = '$slug'";
-        $results = $db->executeSQL($query);
-
-        return !empty($results) ? $results[0] : null;
+        $task = $db->executeSQL("SELECT * FROM task WHERE slug = '$slug'");
+        return array_shift($task);
     }
 
-    public static function create($title, $description) {
+    public function save($title, $description)
+    {
         $db = Database::getInstance();
-
-        $slug = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $title), '-'));
-
-        $title = addslashes($title);
-        $description = addslashes($description);
-        $dueDate = date('Y-m-d');
-
-        $query = "INSERT INTO task (title, description, slug, due_date) VALUES ('$title', '$description', '$slug', '$dueDate')";
+        $slug = strtolower(trim(preg_replace('/[^a-z0-9]+/i', '-', $title), '-'));
+        $db->executeSQLnoreturn(
+            "INSERT INTO task (title, slug, description, created_at, due_date)
+             VALUES ('$title', '$slug', '$description', CURDATE(), DATE_ADD(CURDATE(), INTERVAL 7 DAY))"
+        );
     }
 
-    public static function delete($id) {
+    public function deleteById($id)
+    {
         $db = Database::getInstance();
-        $id = intval($id);
-        $query = "DELETE FROM task WHERE id = $id";
+        $id = (int) $id;
+        $db->executeSQLnoreturn("DELETE FROM task WHERE id = $id");
     }
 }

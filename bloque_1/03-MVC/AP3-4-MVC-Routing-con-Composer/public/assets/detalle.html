@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Detalle de tarea</title>
+</head>
+<body>
+<table border="1">
+    <tr>
+        <td>Id</td>
+        <td>Título</td>
+        <td>Slug</td>
+        <td>Descripción</td>
+        <td>Fecha de creación</td>
+        <td>Fecha de vencimiento</td>
+        <td>Acciones</td>
+    </tr>
+    <tr>
+        <td><?php echo htmlspecialchars($task["id"]) ?></td>
+        <td><?php echo htmlspecialchars($task["title"]) ?></td>
+        <td><?php echo htmlspecialchars((string) ($task["slug"] ?? "")) ?></td>
+        <td><?php echo htmlspecialchars($task["description"]) ?></td>
+        <td><?php echo htmlspecialchars($task["created_at"]) ?></td>
+        <td><?php echo htmlspecialchars($task["due_date"]) ?></td>
+        <td><a href="/">volver</a></td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,35 +1,18 @@
 <?php
 
-namespace AP33\Core;
+namespace AP34\Core;
 
-class Request implements RequestInterface
+class Request
 {
     private $route;
     private $params;
 
     public function __construct()
     {
-        $this->processRoute();
-    }
-
-    private function processRoute()
-    {
         $rawRoute = $_SERVER["REQUEST_URI"];
-
-        if (($pos = strpos($rawRoute, '?')) !== false) {
-            $rawRoute = substr($rawRoute, 0, $pos);
-        }
-
         $rawRouteElements = explode("/", $rawRoute);
-
-        $routeSegment = $rawRouteElements[1] ?? "";
-        $this->route = "/" . ltrim($routeSegment, "/");
-
+        $this->route = "/" . $rawRouteElements[1];
         $this->params = array_slice($rawRouteElements, 2);
-
-        $this->params = array_values(array_filter($this->params, function($value) {
-            return $value !== '';
-        }));
     }
 
     public function getRoute()
@@ -37,8 +20,13 @@ class Request implements RequestInterface
         return $this->route;
     }
 
+    /**
+     * Get the value of parms
+     */
     public function getParams()
     {
         return $this->params;
     }
 }
+
+?>

@@ -1,6 +1,6 @@
 <?php
 
-namespace AP33\Core;
+namespace AP34\Core;
 
 class Database
 {

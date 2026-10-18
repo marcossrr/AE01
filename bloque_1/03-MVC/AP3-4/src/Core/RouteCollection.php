@@ -1,6 +1,6 @@
 <?php
 
-namespace AP33\Core;
+namespace AP34\Core;
 
 /**
  * Clase que se encarga de obtener las rutas por defecto que tiene la aplicación

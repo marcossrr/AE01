@@ -1,8 +1,14 @@
 {
-  "autoload": {
-    "psr-4": {
-      "AP33\\": "src/",
-      "Config\\": "config/"
-    }
-  }
+    "name": "daw-dwes/ap3-4",
+    "autoload": {
+        "psr-4": {
+            "AP34\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "marcos"
+        }
+    ],
+    "require": {}
 }
