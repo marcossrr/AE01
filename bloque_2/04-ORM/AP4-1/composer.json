@@ -1,0 +1,19 @@
+{
+    "name": "root/ap4-1",
+    "autoload": {
+        "psr-4": {
+            "Ap41\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Marcos"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.8",
+        "doctrine/orm": "^3",
+        "doctrine/dbal": "^4",
+        "symfony/cache": "^7"
+    }
+}
