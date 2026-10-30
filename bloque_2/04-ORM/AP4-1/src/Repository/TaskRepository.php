@@ -2,7 +2,10 @@
 
 namespace AP41\Repository;
 
-class TaskRepository
+use AP41\Entity\Task;
+use Doctrine\ORM\EntityRepository;
+
+class TaskRepository extends Task
 {
 
 }

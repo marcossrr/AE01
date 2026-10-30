@@ -31,7 +31,7 @@ class Request implements IRequest
      * Get the value of route
      *  ESTE MÉTODO SE HA IMPLEMENTADO SÍ O SÍ PORUQE LO DEFINE EL INTERFAZ
      */
-    public function getRoute()
+    public function getRoute(): string
     {
         return $this->route;
     }
@@ -40,7 +40,7 @@ class Request implements IRequest
      * Get the value of parms
      *  ESTE MÉTODO SE HA IMPLEMENTADO SÍ O SÍ PORUQE LO DEFINE EL INTERFAZ
      */
-    public function getParams()
+    public function getParams(): array
     {
         return $this->params;
     }

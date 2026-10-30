@@ -24,7 +24,7 @@ VALUES
     (1, 'Configurar el entorno Docker', 'configurar-entorno-docker',
      'Arrancar los servicios y comprobar PHP y MariaDB.', '2026-09-11', '2026-09-18'),
     (2, 'Repasar arrays asociativos', 'repasar-arrays-asociativos',
-     'Crear una lista de tareas y recorrerla con foreach.', '2026-09-11', '2026-09-18'),
+     'Crear una lista de tasks y recorrerla con foreach.', '2026-09-11', '2026-09-18'),
     (3, 'Validar parámetros GET', 'validar-parametros-get',
      'Aceptar únicamente filtros conocidos.', '2026-09-14', '2026-09-25'),
     (4, 'Procesar un formulario POST', 'procesar-formulario-post',
@@ -35,5 +35,5 @@ VALUES
      'Distribuir modelo, controlador y vista.', '2026-10-16', '2026-10-30'),
     (7, 'Configurar Composer', 'configurar-composer',
      'Añadir autoload PSR-4 al proyecto.', '2026-10-30', '2026-11-13'),
-    (8, 'Completar el CRUD de tareas', 'completar-crud-tareas',
+    (8, 'Completar el CRUD de tasks', 'completar-crud-tasks',
      'Implementar alta, consulta, edición y borrado.', '2026-11-20', '2026-12-04');

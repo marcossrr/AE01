@@ -5,7 +5,7 @@ namespace AP41\View;
 class MainView
 {
     /**
-     * Renderiza la vista de listado de tareas.
+     * Renderiza la vista de listado de tasks.
      * @return void
      */
     public function render(): void

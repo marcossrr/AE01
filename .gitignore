@@ -1,7 +1,0 @@
-.idea/
-.DS_Store
-.db_mysql/
-**/.env.local
-**/vendor/
-**/var/
-**/node_modules/

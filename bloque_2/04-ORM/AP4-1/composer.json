@@ -2,7 +2,7 @@
     "name": "root/ap4-1",
     "autoload": {
         "psr-4": {
-            "Ap41\\": "src/"
+            "AP41\\": "src/"
         }
     },
     "authors": [

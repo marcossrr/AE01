@@ -6,12 +6,12 @@ use AP41\Entity\Task;
 
 class TaskView
 {
-    public function list(array $tareas = null): void
+    public function list(array $tasks = null): void
     {
-        require_once __DIR__ . '/../../public/assets/tareas.html';
+        require_once __DIR__ . '/../../public/assets/tasks.html';
     }
 
-    public function detail(?Task $tarea = null): void
+    public function detail(?Task $task = null): void
     {
         require_once __DIR__ . '/../../public/assets/detalle.html';
     }

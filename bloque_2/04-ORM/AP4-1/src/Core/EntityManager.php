@@ -27,7 +27,7 @@ class EntityManager
         $dbParams = array(
             'host' => $_ENV['DBHOST'],
             'driver' => $_ENV['DBDRIVER'],
-            'user' => $_ENV['DBUSER'],
+            'task' => $_ENV['DBtask'],
             'password' => $_ENV['DBPASSWORD'],
             'dbname' => $_ENV['DBNAME']
         );

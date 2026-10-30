@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+          content="width=device-width, task-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Detalle de Tarea</title>
+    <title>Detalle de task</title>
 </head>
 <body>
 <table border="1">
@@ -18,11 +18,11 @@
         <td>Acciones</td>
     </tr>
     <tr>
-        <td><?php echo htmlspecialchars($tarea->getId()) ?></td>
-        <td><?php echo htmlspecialchars($tarea->getTitulo()) ?></td>
-        <td><?php echo htmlspecialchars($tarea->getDescripcion()) ?></td>
-        <td><?php echo $tarea->getFechaCreacion()->format('Y-m-d') ?></td>
-        <td><?php echo $tarea->getFechaVencimiento()->format('Y-m-d') ?></td>
+        <td><?php echo htmlspecialchars($task->getId()) ?></td>
+        <td><?php echo htmlspecialchars($task->getTitulo()) ?></td>
+        <td><?php echo htmlspecialchars($task->getDescription()) ?></td>
+        <td><?php echo $task->getCreatedAt()->format('Y-m-d') ?></td>
+        <td><?php echo $task->getDueDate()->format('Y-m-d') ?></td>
         <td><a href="/">volver</a></td>
     </tr>
 </table>
