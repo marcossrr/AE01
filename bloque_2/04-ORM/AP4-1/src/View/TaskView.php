@@ -6,7 +6,7 @@ use AP41\Entity\Task;
 
 class TaskView
 {
-    public function list(array $tasks = null): void
+    public function list(?array $tasks = null): void
     {
         require_once __DIR__ . '/../../public/assets/tasks.html';
     }

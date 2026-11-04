@@ -18,8 +18,9 @@
     <?php foreach ($tasks as $task){ ?>
     <tr>
         <td>
-            <a href="/detalle/<?php echo htmlspecialchars($task->getId()) ?>"><?php echo htmlspecialchars($task->
-                getTitulo()) ?></a>
+            <a href="/detalle/<?php echo htmlspecialchars($task->getSlug()) ?>">
+                <?php echo htmlspecialchars($task->getTitle()) ?>
+            </a>
         </td>
         <td><?php echo htmlspecialchars($task->getDescription()) ?></td>
         <td><?php echo $task->getCreatedAt()->format('Y-m-d') ?></td>

@@ -5,7 +5,7 @@ use AP41\Repository\TaskRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: TaskRepository::class)]
-#[ORM\Table(name: 'tasks')]
+#[ORM\Table(name: 'task')]
 class Task {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -20,10 +20,10 @@ class Task {
     private string $slug;
 
     #[ORM\Column(name: 'created_at')]
-    private date $created_at;
+    private \DateTime $created_at;
 
     #[ORM\Column(name: 'due_date')]
-    private date $due_date;
+    private \DateTime $due_date;
 
     public function getId(): int
     {
@@ -56,7 +56,7 @@ class Task {
         $this->slug = $slug;
     }
 
-    public function getCreatedAt(): string
+    public function getCreatedAt(): \DateTime
     {
         return $this->created_at;
     }
@@ -66,7 +66,7 @@ class Task {
         $this->created_at = $created_at;
     }
 
-    public function getDueDate(): date
+    public function getDueDate(): \DateTime
     {
         return $this->due_date;
     }

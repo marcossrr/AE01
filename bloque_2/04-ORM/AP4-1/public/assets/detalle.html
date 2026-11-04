@@ -19,7 +19,7 @@
     </tr>
     <tr>
         <td><?php echo htmlspecialchars($task->getId()) ?></td>
-        <td><?php echo htmlspecialchars($task->getTitulo()) ?></td>
+        <td><?php echo htmlspecialchars($task->getTitle()) ?></td>
         <td><?php echo htmlspecialchars($task->getDescription()) ?></td>
         <td><?php echo $task->getCreatedAt()->format('Y-m-d') ?></td>
         <td><?php echo $task->getDueDate()->format('Y-m-d') ?></td>
