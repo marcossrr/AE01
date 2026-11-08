@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+</head>
+<body>
+<h1>List de Productos</h1>
+<nav>
+    <a href="/">Inicio</a> |
+    <a href="/list">Lista de Productos</a>
+</nav>
+<hr>
+<p><a href="/product/create">➕ Crear Nuevo Producto</a></p>
+<table border="1">
+    <tr>
+        <th>Descripción</th>
+    </tr>
+    <?php foreach ($products as $product): ?>
+    <tr>
+        <td><?php echo htmlspecialchars($product->getDescription()) ?></td>
+        <td>
+            <a href="/product/read/<?php echo $product->getSlug() ?>">Ver Detalle</a> |
+            <a href="/product/update/<?php echo $product->getId() ?>">Actualizar</a> |
+            <a href="/product/delete/<?php echo $product->getId() ?>">Eliminar</a>
+        </td>
+    </tr>
+    <?php endforeach; ?>
+</table>
+</body>
+</html>

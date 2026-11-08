@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes</title>
+</head>
+<body>
+<h1>Lista de Clientes</h1>
+<nav>
+    <a href="/">Inicio</a> |
+    <a href="/list">Lista de Clientes</a>
+</nav>
+    <tr>
+        <th></th>
+        <th>Nombre</th>
+        <th>Direccion</th>
+        <th>Ciudad</th>
+        <th>Codigo Postal</th>
+        <th>Telefono</th>
+    </tr>
+    <?php foreach ($clients as $client): ?>
+    <tr>
+        <td><?php echo htmlspecialchars($client->getName()) ?></td>
+        <td><?php echo htmlspecialchars($client->getAddress()) ?></td>
+        <td><?php echo htmlspecialchars($client->getCity ?></td>
+        <td><?php echo htmlspecialchars($client->getPostalCode ?></td>
+        <td><?php echo htmlspecialchars($client->getTelephone?></td>
+
+        </td>
+    </tr>
+    <?php endforeach; ?>
+</table>
+</body>
+</html>

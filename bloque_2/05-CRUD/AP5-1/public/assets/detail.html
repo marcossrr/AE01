@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle de Producto</title>
+</head>
+<body>
+    <h1>Detalle de Producto</h1>
+    <nav>
+        <a href="/">Inicio</a> |
+        <a href="/list">Lista de Productos</a>
+    </nav>
+    <hr>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Descripcion/th>
+        </tr>
+        <tr>
+            <td><?php echo htmlspecialchars($product->getId()) ?></td>
+            <td><?php echo htmlspecialchars($product->getDescription()) ?></td>
+        </tr>
+    </table>
+    <hr>
+    <h3>Acciones CRUD</h3>
+    <ul>
+        <li><a href="/product/create">Insertar nuevo Producto</a></li>
+        <li><a href="/product/update/<?php echo $product->getId() ?>">Actualizar este Producto</a></li>
+        <li><a href="/product/delete/<?php echo $product->getId() ?>">Eliminar este Producto</a></li>
+        <li><a href="/list">Volver al listado</a></li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, task-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Listado de tasks</title>
+</head>
+<body>
+<table border="1">
+    <tr>
+        <td>Título</td>
+        <td>Descripción</td>
+        <td>Fecha de Creación</td>
+        <td>Fecha de Vencimiento</td>
+    </tr>
+    <?php foreach ($tasks as $task){ ?>
+    <tr>
+        <td>
+            <a href="/detalle/<?php echo htmlspecialchars($task->getSlug()) ?>">
+                <?php echo htmlspecialchars($task->getTitle()) ?>
+            </a>
+        </td>
+        <td><?php echo htmlspecialchars($task->getDescription()) ?></td>
+        <td><?php echo $task->getCreatedAt()->format('Y-m-d') ?></td>
+        <td><?php echo $task->getDueDate()->format('Y-m-d') ?></td>
+    </tr>
+    <?php } ?>
+</table>
+</body>
+</html>
+

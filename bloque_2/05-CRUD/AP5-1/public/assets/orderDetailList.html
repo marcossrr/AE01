@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes</title>
+</head>
+<body>
+<h1>Lista de Clientes</h1>
+<nav>
+    <a href="/">Inicio</a> |
+    <a href="/list">Lista de Clientes</a>
+</nav>
+    <tr>
+        <th></th>
+        <th>Numero de linea</th>
+        <th>Id del producto</th>
+        <th>Precio unitario</th>
+        <th>Cantidad</th>
+        <th>Total</th>
+    </tr>
+    <?php foreach ($orderDetails as $orderDetail): ?>
+    <tr>
+        <td><?php echo htmlspecialchars($orderDetail->getLineNumber()) ?></td>
+        <td><?php echo htmlspecialchars($orderDetail->getProductId()) ?></td>
+        <td><?php echo htmlspecialchars($orderDetail->getUnitPrice ?></td>
+        <td><?php echo htmlspecialchars($orderDetail->getQuantity ?></td>
+        <td><?php echo htmlspecialchars($orderDetail->getAmount?></td>
+
+        </td>
+    </tr>
+    <?php endforeach; ?>
+</table>
+</body>
+</html>

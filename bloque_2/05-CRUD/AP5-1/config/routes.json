@@ -1,0 +1,14 @@
+{
+  "/": {
+    "controller": "MainController",
+    "action": "main"
+  },
+  "/list": {
+    "controller": "ProductController",
+    "action": "list"
+  },
+  "/product": {
+    "controller": "ProductController",
+    "action": "crud"
+  }
+}
