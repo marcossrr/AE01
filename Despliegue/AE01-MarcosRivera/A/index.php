@@ -67,48 +67,48 @@ $remaining = $MAX_ATTEMPTS - count($_SESSION['attempts']);
 <!doctype html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<title>Mastermind Numérico</title>
+    <meta charset="utf-8">
+    <title>Mastermind Numérico</title>
 </head>
 <body>
 
 <div class="container">
-  <h2>Mastermind Numérico</h2>
-  <p>Adivina el número de <?= $NUM_DIGITS ?> cifras distintas.<br>
-     Tienes <?= $MAX_ATTEMPTS ?> intentos.</p>
+    <h2>Mastermind Numérico</h2>
+    <p>Adivina el número de <?= $NUM_DIGITS ?> cifras distintas.<br>
+        Tienes <?= $MAX_ATTEMPTS ?> intentos.</p>
 
-  <?php if (!$finished): ?>
-    <form method="post">
-      <input type="text" name="guess" maxlength="<?= $NUM_DIGITS ?>" required autofocus placeholder="Ej: 123">
-      <button type="submit">Intentar</button>
-    </form>
-    <?php if ($message): ?><p class="message"><?= htmlspecialchars($message) ?></p><?php endif; ?>
-    <p>Intentos restantes: <?= $remaining ?></p>
-  <?php else: ?>
-    <div class="result">
-      <?php if ($won): ?>
-        <h3>¡Correcto! El número era <?= htmlspecialchars($secret) ?>.</h3>
-      <?php else: ?>
-        <h3>¡Has perdido! El número era <?= htmlspecialchars($secret) ?>.</h3>
-      <?php endif; ?>
-      <p><a href="?reset=1"><button>Jugar otra vez</button></a></p>
-    </div>
-  <?php endif; ?>
+    <?php if (!$finished): ?>
+        <form method="post">
+            <input type="text" name="guess" maxlength="<?= $NUM_DIGITS ?>" required autofocus placeholder="Ej: 123">
+            <button type="submit">Intentar</button>
+        </form>
+        <?php if ($message): ?><p class="message"><?= htmlspecialchars($message) ?></p><?php endif; ?>
+        <p>Intentos restantes: <?= $remaining ?></p>
+    <?php else: ?>
+        <div class="result">
+            <?php if ($won): ?>
+                <h3>¡Correcto! El número era <?= htmlspecialchars($secret) ?>.</h3>
+            <?php else: ?>
+                <h3>¡Has perdido! El número era <?= htmlspecialchars($secret) ?>.</h3>
+            <?php endif; ?>
+            <p><a href="?reset=1"><button>Jugar otra vez</button></a></p>
+        </div>
+    <?php endif; ?>
 
-  <?php if ($attempts): ?>
-  <h3>Intentos anteriores</h3>
-  <table>
-    <tr><th>#</th><th>Intento</th><th>Exactos</th><th>Parciales</th></tr>
-    <?php foreach ($attempts as $i => $a): ?>
-      <tr>
-        <td><?= $i+1 ?></td>
-        <td><?= htmlspecialchars($a['guess']) ?></td>
-        <td><?= $a['exact'] ?></td>
-        <td><?= $a['partial'] ?></td>
-      </tr>
-    <?php endforeach; ?>
-  </table>
-  <?php endif; ?>
+    <?php if ($attempts): ?>
+        <h3>Intentos anteriores</h3>
+        <table>
+            <tr><th>#</th><th>Intento</th><th>Exactos</th><th>Parciales</th></tr>
+            <?php foreach ($attempts as $i => $a): ?>
+                <tr>
+                    <td><?= $i+1 ?></td>
+                    <td><?= htmlspecialchars($a['guess']) ?></td>
+                    <td><?= $a['exact'] ?></td>
+                    <td><?= $a['partial'] ?></td>
+                </tr>
+            <?php endforeach; ?>
+        </table>
+    <?php endif; ?>
 </div>
 
 </body>
