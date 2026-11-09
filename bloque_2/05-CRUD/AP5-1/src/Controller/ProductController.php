@@ -8,7 +8,7 @@ use AP51\Repository\ProductRepository;
 use AP51\View\MainView;
 use AP51\View\ProductView;
 
-class productController
+class ProductController
 {
         private EntityManager $entityManager;
         private productRepository $repository;

@@ -3,12 +3,16 @@
     "controller": "MainController",
     "action": "main"
   },
-  "/list": {
+  "/products": {
     "controller": "ProductController",
     "action": "list"
   },
   "/product": {
     "controller": "ProductController",
     "action": "crud"
+  },
+  "/create": {
+    "controller": "ProductController",
+    "action": "create"
   }
 }
